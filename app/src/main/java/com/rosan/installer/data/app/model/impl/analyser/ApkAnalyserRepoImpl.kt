@@ -15,6 +15,7 @@ import com.rosan.installer.data.reflect.repo.ReflectRepo
 import com.rosan.installer.data.res.model.impl.AxmlTreeRepoImpl
 import com.rosan.installer.data.res.repo.AxmlTreeRepo
 import com.rosan.installer.data.settings.model.room.entity.ConfigEntity
+import com.rosan.installer.util.getApkSize
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
 import java.io.FileDescriptor
@@ -117,6 +118,9 @@ object ApkAnalyserRepoImpl : AnalyserRepo, KoinComponent {
         var label: String? = null
         var icon: Drawable? = null
         var roundIcon: Drawable? = null
+
+
+        val apkSize: Float = getApkSize(data)
         AxmlTreeRepoImpl(resources.assets.openXmlResourceParser("AndroidManifest.xml")).register("/manifest") {
             packageName = getAttributeValue(null, "package")
             splitName = getAttributeValue(null, "split")
@@ -156,11 +160,13 @@ object ApkAnalyserRepoImpl : AnalyserRepo, KoinComponent {
             data = data,
             versionCode = versionCode,
             versionName = versionName,
+            apkSize = apkSize,
             label = label,
             icon = roundIcon ?: icon
         ) else AppEntity.SplitEntity(
             packageName = packageName!!,
             data = data,
+            apkSize = apkSize,
             splitName = splitName!!
         )
     }

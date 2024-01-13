@@ -17,14 +17,7 @@
     <string name="preview">预览版</string>
     <string name="unstable">测试版</string>
 
-    <string name="donate">捐赠</string>
-    <string name="alipay">支付宝</string>
-    <string name="wechat">微信</string>
-    <string name="binance">币安</string>
-
     <string name="discuss">讨论 &amp; 反馈 &amp; 更新</string>
-    <string name="qq_channel">QQ频道</string>
-    <string name="qq_group_official">QQ群组（官方）</string>
     <string name="telegram_group">Telegram群组</string>
 
     <string name="basic">常规</string>
@@ -63,7 +56,7 @@
     <!--    <string name="config_authorizer_msg">用于执行解析与执行命令，请确保拥有足够的权限。</string>-->
     <string name="config_authorizer_global">跟随全局</string>
     <string name="config_authorizer_none">无</string>
-    <string name="config_authorizer_root">ROOT超级用户</string>
+    <string name="config_authorizer_root">Root</string>
     <string name="config_authorizer_shizuku">Shizuku</string>
     <string name="config_authorizer_dhizuku">Dhizuku</string>
     <string name="config_authorizer_customize">自定义</string>
@@ -130,7 +123,8 @@
     <string name="installer_progress_channel_name">安装过程通知</string>
     <string name="installer_background_channel_name">后台通知</string>
 
-    <string name="installer_running">InstallerX 运行中</string>
+    <string name="installer_running">InstallerNext 运行中</string>
+    <string name="installer_apk_size">安装包体积：%s MB</string>
 
     <string name="installer_version">版本：%s (%s)</string>
     <string name="installer_version2">%s (%s)</string>

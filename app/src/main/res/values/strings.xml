@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">InstallerX</string>
+    <string name="app_name" translatable="false">InstallerNext</string>
 
     <string name="agreement_title">Policy</string>
     <string name="agreement_text">Here is our user policy, Please read and agree to it. &lt;a href=&quot;https://iamr0s.github.io/InstallerXDocs/terms&quot;&gt;User Policy&lt;/a&gt;, &lt;a href=&quot;https://iamr0s.github.io/InstallerXDocs/privacy&quot;&gt;Privacy Policy&lt;/a&gt; This message won\'t show up again after you agree.</string>
@@ -19,14 +19,7 @@
     <string name="preview">Preview</string>
     <string name="unstable">Unstable</string>
 
-    <string name="donate">Donate</string>
-    <string name="alipay">Alipay</string>
-    <string name="wechat">Wechat</string>
-    <string name="binance">Binance</string>
-
     <string name="discuss">Chat &amp; Feedback &amp; Update</string>
-    <string name="qq_channel">QQ channel</string>
-    <string name="qq_group_official">QQ group (official)</string>
     <string name="telegram_group">Telegram group</string>
 
     <string name="basic">Basic</string>
@@ -132,7 +125,8 @@
     <string name="installer_progress_channel_name">Install Process Notification</string>
     <string name="installer_background_channel_name">Background Notification</string>
 
-    <string name="installer_running">InstallerX running</string>
+    <string name="installer_running">InstallerNext running</string>
+    <string name="installer_apk_size">APK Size: %s MB</string>
 
     <string name="installer_version">Version: %s (%s)</string>
     <string name="installer_version2">%s (%s)</string>

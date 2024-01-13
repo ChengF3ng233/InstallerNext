@@ -2,7 +2,11 @@ package com.rosan.installer.ui.page.installer.dialog
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import com.rosan.installer.data.installer.repo.InstallerRepo
 import com.rosan.installer.ui.page.installer.dialog.inner.*
 
@@ -16,7 +20,7 @@ fun dialogInnerWidget(
     else {
         {
             AnimatedContent(
-                targetState = "${installer.id}_${params.id}"
+                targetState = "${installer.id}_${params.id}", label = "",
             ) {
                 params.content.invoke()
             }

@@ -5,7 +5,9 @@ import com.rosan.installer.data.app.model.entity.AnalyseExtraEntity
 import com.rosan.installer.data.app.model.entity.AppEntity
 import com.rosan.installer.data.app.model.entity.DataEntity
 import com.rosan.installer.data.app.repo.AnalyserRepo
+import com.rosan.installer.data.app.util.sourcePath
 import com.rosan.installer.data.settings.model.room.entity.ConfigEntity
+import com.rosan.installer.util.getApkSize
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -130,6 +132,7 @@ object ApkMAnalyserRepoImpl : AnalyserRepo, KoinComponent {
     ): List<AppEntity> {
         var dmName: String? = null
         var splitName: String? = null
+        val apkSize = getApkSize(data)
         when (File(name).extension) {
             "apk" -> {
                 val name = File(name).nameWithoutExtension
@@ -143,16 +146,19 @@ object ApkMAnalyserRepoImpl : AnalyserRepo, KoinComponent {
         val app = if (splitName?.isNotEmpty() == true) AppEntity.SplitEntity(
             packageName = manifest.packageName,
             data = data,
+            apkSize = apkSize,
             splitName = splitName
         ) else if (dmName?.isNotEmpty() == true) AppEntity.DexMetadataEntity(
             packageName = manifest.packageName,
             data = data,
+            apkSize = apkSize,
             dmName = dmName
         ) else AppEntity.BaseEntity(
             packageName = manifest.packageName,
             data = data,
             versionCode = manifest.versionCode,
             versionName = manifest.versionName,
+            apkSize = apkSize,
             label = manifest.label,
             icon = icon
         )

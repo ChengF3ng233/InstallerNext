@@ -16,7 +16,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.google.accompanist.drawablepainter.rememberDrawablePainter
@@ -128,6 +131,11 @@ fun InstallInfoDialog(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
                     .basicMarquee()
+            )
+
+            Text(
+                stringResource(R.string.installer_apk_size, entity.apkSize),
+                modifier = Modifier.align(Alignment.CenterHorizontally).basicMarquee()
             )
         }
     }, buttons = DialogButtons(

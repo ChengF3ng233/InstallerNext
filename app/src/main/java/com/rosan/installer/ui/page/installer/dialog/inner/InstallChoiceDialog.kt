@@ -76,6 +76,11 @@ fun InstallChoiceDialog(
                                     style = MaterialTheme.typography.bodyMedium
                                 )
                                 Text(
+                                    stringResource(R.string.installer_apk_size, app.apkSize),
+                                    modifier = Modifier.basicMarquee(),
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                                Text(
                                     stringResource(
                                         R.string.installer_file_path,
                                         app.data.getSourceTop().toString()
@@ -99,6 +104,11 @@ fun InstallChoiceDialog(
                                     style = MaterialTheme.typography.bodyMedium
                                 )
                                 Text(
+                                    stringResource(R.string.installer_apk_size, app.apkSize),
+                                    modifier = Modifier.basicMarquee(),
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                                Text(
                                     stringResource(
                                         R.string.installer_file_path,
                                         app.data.getSourceTop().toString()
@@ -118,6 +128,11 @@ fun InstallChoiceDialog(
                                         R.string.installer_package_name,
                                         app.packageName,
                                     ),
+                                    modifier = Modifier.basicMarquee(),
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                                Text(
+                                    stringResource(R.string.installer_apk_size, app.apkSize),
                                     modifier = Modifier.basicMarquee(),
                                     style = MaterialTheme.typography.bodyMedium
                                 )

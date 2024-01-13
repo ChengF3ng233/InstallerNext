@@ -48,7 +48,7 @@ abstract class IBinderInstallerRepoImpl : InstallerRepo, KoinComponent {
 
     protected abstract suspend fun iBinderWrapper(iBinder: IBinder): IBinder
 
-    private suspend fun getFiled(any: Class<*>, name: String, clazz: Class<*>): Field? {
+    private suspend fun getField(any: Class<*>, name: String, clazz: Class<*>): Field? {
         var field = reflect.getDeclaredField(any, name)
         field?.isAccessible = true
         if (field?.type != clazz) {
@@ -111,7 +111,7 @@ abstract class IBinderInstallerRepoImpl : InstallerRepo, KoinComponent {
     }
 
     private suspend fun setSessionIBinder(session: Session) {
-        val field = getFiled(session::class.java, "mSession", IPackageInstallerSession::class.java)
+        val field = getField(session::class.java, "mSession", IPackageInstallerSession::class.java)
             ?: return
         val iBinder = (field.get(session) as IInterface).asBinder()
         field.set(

@@ -1,12 +1,12 @@
 pluginManagement {
     repositories {
         mavenLocal()
-//        maven { setUrl("https://maven.aliyun.com/repository/public/") }
-//        maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://maven.aliyun.com/repository/public/") }
+        maven { setUrl("https://jitpack.io") }
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { setUrl("https://maven.scijava.org/content/repositories/public/") }
+        //maven { setUrl("https://maven.scijava.org/content/repositories/public/") }
     }
 }
 
@@ -14,11 +14,11 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenLocal()
-//        maven { setUrl("https://maven.aliyun.com/repository/public/") }
-//        maven { setUrl("https://jitpack.io") }
+        maven { setUrl("https://maven.aliyun.com/repository/public/") }
+        maven { setUrl("https://jitpack.io") }
         google()
         mavenCentral()
-        maven { setUrl("https://maven.scijava.org/content/repositories/public/") }
+        //maven { setUrl("https://maven.scijava.org/content/repositories/public/") }
     }
 }
 

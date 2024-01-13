@@ -1,4 +1,3 @@
-import java.io.FileInputStream
 import java.util.*
 
 @Suppress("DSL_SCOPE_VIOLATION")
@@ -9,11 +8,6 @@ plugins {
     id("kotlinx-serialization")
 }
 
-val keystoreProps = Properties().apply {
-    load(FileInputStream(rootProject.file("keystore/r0s.properties")))
-}
-
-@Suppress("UnstableApiUsage")
 android {
     compileSdk = 33
 
@@ -22,12 +16,12 @@ android {
         // 请换一个applicationId，不要和官方的任何发布版本产生冲突。
         // If you use InstallerX source code, package it into apk or other installation package format
         // Please change the applicationId to one that does not conflict with any official release.
-        applicationId = "com.rosan.installer.x"
+        applicationId = "com.rosan.installer.next"
         namespace = "com.rosan.installer"
         minSdk = 21
         targetSdk = 33
-        versionCode = 26
-        versionName = "1.7"
+        versionCode = 114514
+        versionName = "Beta"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -43,29 +37,8 @@ android {
         }
     }
 
-    signingConfigs {
-        getByName("debug") {
-            keyAlias = keystoreProps.getProperty("keyAlias")
-            keyPassword = keystoreProps.getProperty("keyPassword")
-            storeFile = file(keystoreProps.getProperty("storeFile"))
-            storePassword = keystoreProps.getProperty("storePassword")
-            enableV1Signing = true
-            enableV2Signing = true
-        }
-
-        create("release") {
-            keyAlias = keystoreProps.getProperty("keyAlias")
-            keyPassword = keystoreProps.getProperty("keyPassword")
-            storeFile = file(keystoreProps.getProperty("storeFile"))
-            storePassword = keystoreProps.getProperty("storePassword")
-            enableV1Signing = true
-            enableV2Signing = true
-        }
-    }
-
     buildTypes {
         getByName("debug") {
-            signingConfig = signingConfigs.getByName("debug")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -74,7 +47,6 @@ android {
         }
 
         getByName("release") {
-            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),

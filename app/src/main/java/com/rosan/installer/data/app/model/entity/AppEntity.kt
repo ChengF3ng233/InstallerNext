@@ -7,8 +7,11 @@ sealed class AppEntity {
 
     abstract val name: String
 
+    abstract val apkSize: Float
+
     data class BaseEntity(
         override val packageName: String,
+        override val apkSize: Float,
         val data: DataEntity,
         val versionCode: Long,
         val versionName: String,
@@ -19,6 +22,7 @@ sealed class AppEntity {
     }
 
     data class SplitEntity(
+        override val apkSize: Float,
         override val packageName: String,
         val data: DataEntity,
         val splitName: String
@@ -27,6 +31,7 @@ sealed class AppEntity {
     }
 
     data class DexMetadataEntity(
+        override val apkSize: Float,
         override val packageName: String,
         val data: DataEntity,
         val dmName: String
