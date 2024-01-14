@@ -22,7 +22,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.input.pointer.pointerInput
@@ -84,7 +83,7 @@ fun PositionDialog(
                 ) {
                     Box(
                         modifier = Modifier
-                            .sizeIn(minWidth = MinWidth, maxHeight = MaxWidth)
+                            .sizeIn(minWidth = MinWidth, maxHeight = MaxHeight)
                             .padding(DialogPadding)
                     ) {
                         // set the button always in bottom
@@ -227,4 +226,4 @@ private val ContentPadding = PaddingValues.Absolute(bottom = 12.dp)
 private val ButtonPadding = PaddingValues(horizontal = DialogSinglePadding)
 
 private val MinWidth = 280.dp
-private val MaxWidth = 560.dp
+private val MaxHeight = 560.dp

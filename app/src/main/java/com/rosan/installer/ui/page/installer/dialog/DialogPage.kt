@@ -2,6 +2,12 @@ package com.rosan.installer.ui.page.installer.dialog
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.EaseInElastic
+import androidx.compose.animation.core.EaseInOutCubic
+import androidx.compose.animation.core.EaseInOutElastic
+import androidx.compose.animation.core.EaseInOutQuart
+import androidx.compose.animation.core.EaseInOutSine
+import androidx.compose.animation.core.EaseOutExpo
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.Spring
@@ -11,6 +17,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.rosan.installer.data.installer.repo.InstallerRepo
@@ -34,9 +41,7 @@ fun DialogPage(
         },
         shape = RoundedCornerShape(12.dp),
         containerColor = Color(245, 245, 220),
-        modifier = Modifier.animateContentSize(
-            spring(Spring.DampingRatioMediumBouncy, Spring.StiffnessMedium)
-        ),
+        modifier = Modifier.animateContentSize(tween(200, 0, EaseOutExpo)),
         centerIcon = dialogInnerWidget(installer, params.icon),
         centerTitle = dialogInnerWidget(installer, params.title),
         centerSubtitle = dialogInnerWidget(installer, params.subtitle),

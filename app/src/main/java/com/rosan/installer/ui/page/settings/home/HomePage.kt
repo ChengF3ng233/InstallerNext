@@ -133,6 +133,12 @@ fun DiscussWidget() {
                 openUrl(context, "https://t.me/rosan_installer")
             }
         ),
+        HomeCardItem(
+            label = stringResource(id = R.string.github_repo),
+            onClick = {
+                openUrl(context, "https://github.com/FengG0d/InstallerNext")
+            }
+        )
     )
     ItemsCardWidget(
         title = {

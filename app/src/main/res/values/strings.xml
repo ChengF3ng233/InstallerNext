@@ -21,6 +21,7 @@
 
     <string name="discuss">Chat &amp; Feedback &amp; Update</string>
     <string name="telegram_group">Telegram group</string>
+    <string name="github_repo">Github Repo</string>
 
     <string name="basic">Basic</string>
     <string name="lock_default_installer">Set as default installer</string>

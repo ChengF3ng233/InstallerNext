@@ -19,6 +19,7 @@
 
     <string name="discuss">讨论 &amp; 反馈 &amp; 更新</string>
     <string name="telegram_group">Telegram群组</string>
+    <string name="github_repo">Github仓库</string>
 
     <string name="basic">常规</string>
     <string name="lock_default_installer">锁定为默认安装器</string>
